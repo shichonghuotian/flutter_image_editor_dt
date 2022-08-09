@@ -192,27 +192,19 @@ class ImageEditorState extends State<ImageEditor>
                       duration: _panelController.panelDuration);
                 }),
             //canvas
-
-            // Center(
-            //   child: ,
-            //
-            // ),
-
-            Positioned.fromRect(
-                rect: Rect.fromLTWH(0, headerHeight, screenWidth, canvasHeight),
-                child: Center(
-                  child: RepaintBoundary(
-                    key: _boundaryKey,
-                    child: RotatedBox(
-                      quarterTurns: rotateValue,
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          _buildImage(),
-                          _buildBrushCanvas(),
-                          buildTextCanvas(),
-                        ],
-                      ),
+            Center(
+                // rect: Rect.fromLTWH(0, headerHeight, screenWidth, canvasHeight),
+                child: RepaintBoundary(
+                  key: _boundaryKey,
+                  child: RotatedBox(
+                    quarterTurns: rotateValue,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        _buildImage(),
+                        _buildBrushCanvas(),
+                        buildTextCanvas(),
+                      ],
                     ),
                   ),
                 )),
